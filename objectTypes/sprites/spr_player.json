@@ -1,0 +1,102 @@
+{
+	"name": "spr_player",
+	"plugin-id": "Sprite",
+	"sid": 788424649646853,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "turningSpeed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 211796908614110
+		},
+		{
+			"name": "turningWait",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 301121705378379
+		},
+		{
+			"name": "isTurning",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 503181901301594
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 170221424961648
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 152,
+						"height": 152,
+						"originX": 0.4276315789473684,
+						"originY": 0.5723684210526315,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 2706879,
+						"collisionPoly": {
+							"points": [
+								0.274671052631579,
+								0,
+								1,
+								0.7253289473684207,
+								0.011513157894736841,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 152,
+						"height": 152,
+						"originX": 0.4276315789473684,
+						"originY": 0.5723684210526315,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 2444486,
+						"collisionPoly": {
+							"points": [
+								0.274671052631579,
+								0,
+								1,
+								0.7253289473684207,
+								0.011513157894736841,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 876705714240002,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

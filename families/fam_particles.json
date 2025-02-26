@@ -1,0 +1,14 @@
+{
+	"name": "fam_particles",
+	"plugin-id": "Particles",
+	"sid": 698641279043998,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"particles_yellow",
+		"particles_red",
+		"particles_player",
+		"particles_blue"
+	]
+}

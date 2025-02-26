@@ -1,0 +1,10 @@
+{
+	"name": "txt_go",
+	"plugin-id": "Text",
+	"sid": 675006401716366,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

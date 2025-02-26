@@ -1,0 +1,1161 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "spawnSpeed",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 682385265108691
+		},
+		{
+			"eventType": "variable",
+			"name": "ringSpeed",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 465986359099199
+		},
+		{
+			"eventType": "variable",
+			"name": "gameOver",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 331208836040179
+		},
+		{
+			"eventType": "variable",
+			"name": "score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 848029824981417
+		},
+		{
+			"eventType": "variable",
+			"name": "highScore",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 575723174597788
+		},
+		{
+			"eventType": "variable",
+			"name": "levelUp",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 405018941583951
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Initialize",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 171992824293601
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 982113068225596,
+							"parameters": {
+								"variable": "gameOver",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 558781302670564,
+							"parameters": {
+								"group-name": "\"PlayerControl\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 509036789004925,
+							"parameters": {
+								"group-name": "\"RingSpawner\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 249529305031643,
+							"parameters": {
+								"variable": "score",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 841053107488716,
+							"parameters": {
+								"variable": "levelUp",
+								"value": "10"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "spr_ring",
+							"sid": 230648280747794
+						},
+						{
+							"id": "destroy",
+							"objectClass": "fam_particles",
+							"sid": 261111784328128
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "txt_ready",
+							"sid": 327018737007453,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "txt_go",
+							"sid": 324111732341211,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "txt_highScore",
+							"sid": 818716655975617,
+							"parameters": {
+								"text": "\"High Score: \"&highScore"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 262108740001629,
+							"parameters": {
+								"seconds": "2",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "txt_ready",
+							"sid": 917260170759443,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "txt_go",
+							"sid": 166672956477477,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 635669619330983,
+							"parameters": {
+								"group-name": "\"PlayerControl\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 449337609756854,
+							"parameters": {
+								"group-name": "\"RingSpawner\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 396314742842930,
+							"parameters": {
+								"variable": "ringSpeed",
+								"value": "250"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 778224681304444,
+							"parameters": {
+								"variable": "spawnSpeed",
+								"value": "1.2"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 844035261143889,
+							"parameters": {
+								"seconds": "1.0",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "txt_go",
+							"sid": 569088972694121,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 990943849147184
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 607876814967216
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "txt_score",
+							"sid": 550439310650014,
+							"parameters": {
+								"text": "\"SCORE: \"&score"
+							}
+						}
+					],
+					"sid": 261095999565142
+				}
+			],
+			"sid": 178005055492912
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "BackgroundStars",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 196099028616312
+						},
+						{
+							"id": "repeat",
+							"objectClass": "System",
+							"sid": 563575892268305,
+							"parameters": {
+								"count": "100"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 236673732879768,
+							"parameters": {
+								"object-to-create": "spr_star",
+								"layer": "\"background\"",
+								"x": "random(0,480)",
+								"y": "random(0,854)",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "spr_star",
+							"sid": 545939320524216,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "random(20,50)"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "spr_star",
+							"sid": 445157832443815,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "random(85,95)"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "spr_star",
+							"sid": 437976894578769,
+							"parameters": {
+								"width": "spr_star.Width*spr_star.Bullet.Speed/20",
+								"height": "spr_star.Height*spr_star.Bullet.Speed/20"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "spr_star",
+							"sid": 519209495369125,
+							"parameters": {
+								"opacity": "spr_star.Bullet.Speed * 1.5"
+							}
+						}
+					],
+					"sid": 842864041936482
+				}
+			],
+			"sid": 262240638525192
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "PlayerControl",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 322697836276398,
+							"parameters": {
+								"key": 37
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "spr_player",
+							"sid": 357248224081612,
+							"parameters": {
+								"instance-variable": "isTurning",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "TurningLeft",
+							"sid": 848839214770077
+						}
+					],
+					"sid": 473216542084401
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 453894892057765,
+							"parameters": {
+								"key": 39
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "spr_player",
+							"sid": 437067302398718,
+							"parameters": {
+								"instance-variable": "isTurning",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "TurningRight",
+							"sid": 896431381181332
+						}
+					],
+					"sid": 714026448138731
+				},
+				{
+					"eventType": "comment",
+					"text": "Touch controls"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 747173329825595,
+							"parameters": {
+								"object": "spr_mvtButton"
+							}
+						},
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "spr_mvtButton",
+							"sid": 473816974408347,
+							"parameters": {
+								"comparison": 0,
+								"number": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "TurningLeft",
+							"sid": 682096705844280
+						}
+					],
+					"sid": 652448767389509
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 161048585676573,
+							"parameters": {
+								"object": "spr_mvtButton"
+							}
+						},
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "spr_mvtButton",
+							"sid": 577839524491965,
+							"parameters": {
+								"comparison": 0,
+								"number": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "TurningRight",
+							"sid": 944654502402518
+						}
+					],
+					"sid": 697473857363709
+				}
+			],
+			"sid": 607942140187359
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "RingSpawner",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 843599778261673,
+							"parameters": {
+								"interval-seconds": "spawnSpeed"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 544480239180055,
+							"parameters": {
+								"object-to-create": "spr_ring",
+								"layer": "\"game\"",
+								"x": "ringSpawner.X",
+								"y": "ringSpawner.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "spr_ring",
+							"sid": 333640180241523,
+							"parameters": {
+								"frame-number": "random(0,3)"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "spr_ring",
+							"sid": 572815747859207,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "ringSpeed"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "spr_ring",
+							"sid": 452430407227932,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "90"
+							}
+						}
+					],
+					"sid": 127308750451372
+				}
+			],
+			"sid": 973451281782157
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "GamePlayMechanics",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "spr_ring",
+							"sid": 271020615398774,
+							"parameters": {
+								"object": "spr_player"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 911932909578877,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-between-angles",
+									"objectClass": "spr_player",
+									"sid": 431319684335193,
+									"parameters": {
+										"first-angle": "10",
+										"second-angle": "20"
+									}
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "spr_ring",
+									"sid": 609240744530832,
+									"parameters": {
+										"comparison": 0,
+										"number": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "spr_ring",
+									"sid": 491716372468767
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 162553004681173,
+									"parameters": {
+										"object-to-create": "particles_blue",
+										"layer": "\"game\"",
+										"x": "spr_ring.X",
+										"y": "spr_ring.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 205586741515981,
+									"parameters": {
+										"variable": "score",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 542663381402015
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-between-angles",
+									"objectClass": "spr_player",
+									"sid": 424720381942959,
+									"parameters": {
+										"first-angle": "130",
+										"second-angle": "140"
+									}
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "spr_ring",
+									"sid": 142276478837592,
+									"parameters": {
+										"comparison": 0,
+										"number": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "spr_ring",
+									"sid": 332222283936264
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 380049479801412,
+									"parameters": {
+										"object-to-create": "particles_yellow",
+										"layer": "\"game\"",
+										"x": "spr_ring.X",
+										"y": "spr_ring.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 424720790279136,
+									"parameters": {
+										"variable": "score",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 442043103065767
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-between-angles",
+									"objectClass": "spr_player",
+									"sid": 904588096459075,
+									"parameters": {
+										"first-angle": "250",
+										"second-angle": "260"
+									}
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "spr_ring",
+									"sid": 448076726712418,
+									"parameters": {
+										"comparison": 0,
+										"number": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "spr_ring",
+									"sid": 125599001901197
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 374415371449472,
+									"parameters": {
+										"object-to-create": "particles_red",
+										"layer": "\"game\"",
+										"x": "spr_ring.X",
+										"y": "spr_ring.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 903787089772383,
+									"parameters": {
+										"variable": "score",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 359661069222695
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "spr_ring",
+							"sid": 430123032366816,
+							"parameters": {
+								"object": "spr_player"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 898519137375919,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-between-angles",
+									"objectClass": "spr_player",
+									"sid": 651165623036890,
+									"parameters": {
+										"first-angle": "10",
+										"second-angle": "20"
+									}
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "spr_ring",
+									"sid": 436849427047528,
+									"parameters": {
+										"comparison": 0,
+										"number": "0"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "PlayerDestroy",
+									"sid": 173478610612941
+								}
+							],
+							"sid": 706826779673886
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-between-angles",
+									"objectClass": "spr_player",
+									"sid": 692655256362687,
+									"parameters": {
+										"first-angle": "130",
+										"second-angle": "140"
+									}
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "spr_ring",
+									"sid": 643193989806002,
+									"parameters": {
+										"comparison": 0,
+										"number": "1"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "PlayerDestroy",
+									"sid": 960055559423458
+								}
+							],
+							"sid": 823094793298449
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-between-angles",
+									"objectClass": "spr_player",
+									"sid": 205480474774893,
+									"parameters": {
+										"first-angle": "250",
+										"second-angle": "260"
+									}
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "spr_ring",
+									"sid": 541344410074389,
+									"parameters": {
+										"comparison": 0,
+										"number": "2"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "PlayerDestroy",
+									"sid": 357704948503822
+								}
+							],
+							"sid": 445954980608549
+						}
+					]
+				}
+			],
+			"sid": 147475690632818
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "GameOver",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 617713823322809,
+							"parameters": {
+								"variable": "gameOver",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 499633087528750,
+							"parameters": {
+								"group-name": "\"PlayerControl\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 603879589238291,
+							"parameters": {
+								"group-name": "\"RingSpawner\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "spr_ring",
+							"sid": 113102488126119
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 512632090124442,
+							"parameters": {
+								"seconds": "2",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 640859141529860
+						},
+						{
+							"id": "set-text",
+							"objectClass": "txt_highScore",
+							"sid": 316219538647684,
+							"parameters": {
+								"text": "\"Hight Score: \"&highScore"
+							}
+						}
+					],
+					"sid": 618511938523503
+				}
+			],
+			"sid": 535968210193511
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Scoring",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 717365581745542,
+							"parameters": {
+								"variable": "score",
+								"comparison": 4,
+								"value": "highScore"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 342597503466374,
+							"parameters": {
+								"variable": "highScore",
+								"value": "score"
+							}
+						}
+					],
+					"sid": 208767598732020
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 145340775294846,
+							"parameters": {
+								"variable": "score",
+								"comparison": 5,
+								"value": "levelUp"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 150983743687866,
+							"parameters": {
+								"variable": "ringSpeed",
+								"value": "ringSpeed + 25"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 253373956716914,
+							"parameters": {
+								"variable": "spawnSpeed",
+								"value": "spawnSpeed - 0.1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 599863476335596,
+							"parameters": {
+								"variable": "levelUp",
+								"value": "levelUp + 10"
+							}
+						}
+					],
+					"sid": 255480262016950
+				}
+			],
+			"sid": 458335280864119
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Functions",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "PlayerDestroy",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "spr_player",
+							"sid": 646068076810015
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 177647856628460,
+							"parameters": {
+								"object-to-create": "particles_player",
+								"layer": "\"game\"",
+								"x": "spr_player.X",
+								"y": "spr_player.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 954290380298736,
+							"parameters": {
+								"variable": "gameOver",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 272284127277782
+				},
+				{
+					"functionName": "TurningLeft",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "spr_player",
+							"sid": 479953008335801,
+							"parameters": {
+								"instance-variable": "isTurning",
+								"value": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "spr_player",
+							"sid": 721548865352713,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetAngle",
+								"end-value": "spr_player.Angle-120",
+								"time": "spr_player.turningSpeed",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 474806641555959,
+							"parameters": {
+								"seconds": "spr_player.turningWait",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "spr_player",
+							"sid": 237961174852432,
+							"parameters": {
+								"instance-variable": "isTurning",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 530671441898836
+				},
+				{
+					"functionName": "TurningRight",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "spr_player",
+							"sid": 152658130302455,
+							"parameters": {
+								"instance-variable": "isTurning",
+								"value": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "spr_player",
+							"sid": 665039956349560,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetAngle",
+								"end-value": "spr_player.Angle+120",
+								"time": "spr_player.turningSpeed",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 392119656595568,
+							"parameters": {
+								"seconds": "spr_player.turningWait",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "spr_player",
+							"sid": 794951576685680,
+							"parameters": {
+								"instance-variable": "isTurning",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 425996501125771
+				}
+			],
+			"sid": 387310677198355
+		}
+	],
+	"sid": 595314116087879
+}

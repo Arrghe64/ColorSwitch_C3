@@ -1,0 +1,23 @@
+{
+	"name": "particles_red",
+	"plugin-id": "Particles",
+	"sid": 665050362466910,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 5,
+		"height": 5,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 7381478,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

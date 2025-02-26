@@ -1,0 +1,10 @@
+{
+	"name": "txt_ready",
+	"plugin-id": "Text",
+	"sid": 527656106214900,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}
